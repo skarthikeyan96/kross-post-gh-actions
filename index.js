@@ -10,11 +10,18 @@ const octokit = new Octokit();
 const pr_number = process.env.GITHUB_PULL_REQUEST;
 const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
 
-const { data: files } = await octokit.pulls.listFiles({
-  owner,
-  repo,
-  pull_number: pr_number,
-});
+const run = async () => {
+    const { data: files } = await octokit.pulls.listFiles({
+        owner,
+        repo,
+        pull_number: pr_number,
+      });
+
+      console.log(files);
+
+}
 
 
-console.log(files);
+run()
+
+
