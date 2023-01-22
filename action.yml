@@ -1,0 +1,19 @@
+name: "Kross post"
+description: "Posting to dev.to , medium and hashnode"
+author: "Karthikeyan"
+
+
+inputs:
+  FILES:
+    description: 'directory markdown files are present ( default posts/**/*md )'
+    required: false
+  GITHUB_TOKEN:
+    description: 'Github token'
+    required: true
+  DEV_TO_API_TOKEN:
+    description: 'Dev.to API token'
+    required: true
+
+runs: 
+  using: 'node16'
+  main: 'dist/index.js'
