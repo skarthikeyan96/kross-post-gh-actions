@@ -4,6 +4,9 @@ author: "Karthikeyan"
 
 
 inputs:
+  FILES:
+    description: 'directory markdown files are present ( default posts/**/*md )'
+    required: false
   GITHUB_TOKEN:
     description: 'Github token'
     required: true
