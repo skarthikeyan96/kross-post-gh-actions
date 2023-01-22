@@ -1,0 +1,16 @@
+name: "Kross post"
+description: "Posting to dev.to , medium and hashnode"
+author: "Karthikeyan"
+
+
+inputs:
+  GITHUB_TOKEN:
+    description: 'Github token'
+    required: true
+  DEV_TO_API_TOKEN:
+    description: 'Dev.to API token'
+    required: true
+
+runs: 
+  using: 'node15'
+  main: 'index.js'

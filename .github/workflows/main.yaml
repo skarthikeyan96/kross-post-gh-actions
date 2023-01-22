@@ -2,6 +2,7 @@ name: Kross post github actions
 on:
   pull_request:
     branches: ["*"]
+    types: [opened]
 
 jobs:
   build:
@@ -14,14 +15,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: create env file
-        run: |
-          touch .env
-          echo DEV_TO_API=${{ secrets.DEV_TO_API_KEY }} >> .env
-      - run: npm install
-      - run: npm run build --if-present
-      - run: node index.js
+      - uses: ./
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      # - name: create env file
+      #   run: |
+      #     touch .env
+      #     echo DEV_TO_API=${{ secrets.DEV_TO_API_KEY }} >> .env
+      # - run: npm install
+      # - run: npm run build --if-present
+      # - run: node index.js
