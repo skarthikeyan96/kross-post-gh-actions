@@ -2,7 +2,6 @@ name: Kross post github actions
 on:
   pull_request:
     branches: ["*"]
-    types: [opened]
 
 jobs:
   build:
