@@ -2947,8 +2947,6 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(186)
 __nccwpck_require__(437).config()
 
-// get the latest file from the post directory
-// then setup
 
 const files = core.getInput('files')
 console.log(files)
